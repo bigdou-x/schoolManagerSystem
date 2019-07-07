@@ -1,4 +1,4 @@
-package com.bigdou.xuqing.datasource;
+package com.bigdou.datasource;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -38,23 +38,23 @@ public class DataSourceManager{
         return new DataSourceTransactionManager(h2DataSource);
     }
 
-//    @Bean
-//    @ConfigurationProperties("mysql.datasource")
-//    public DataSourceProperties mysqlDataSourceProperties() {
-//        return new DataSourceProperties();
-//    }
-//
-//    @Bean
-//    public DataSource mysqlDataSource() {
-//        DataSourceProperties dataSourceProperties = mysqlDataSourceProperties();
-//        log.info("mysql datasource: {}", dataSourceProperties.getUrl());
-//        return dataSourceProperties.initializeDataSourceBuilder().build();
-//    }
-//
-//    @Bean
-//    @Resource
-//    public PlatformTransactionManager mysqlTxManager(DataSource mysqlDataSource) {
-//        return new DataSourceTransactionManager(mysqlDataSource);
-//    }
+    @Bean
+    @ConfigurationProperties("mysql.datasource")
+    public DataSourceProperties mysqlDataSourceProperties() {
+        return new DataSourceProperties();
+    }
+
+    @Bean
+    public DataSource mysqlDataSource() {
+        DataSourceProperties dataSourceProperties = mysqlDataSourceProperties();
+        log.info("mysql datasource: {}", dataSourceProperties.getUrl());
+        return dataSourceProperties.initializeDataSourceBuilder().build();
+    }
+
+    @Bean
+    @Resource
+    public PlatformTransactionManager mysqlTxManager(DataSource mysqlDataSource) {
+        return new DataSourceTransactionManager(mysqlDataSource);
+    }
 
 }

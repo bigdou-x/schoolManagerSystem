@@ -1,4 +1,4 @@
-package com.bigdou.xuqing.database.druid;
+package com.bigdou.database.druid;
 
 import com.alibaba.druid.filter.FilterChain;
 import com.alibaba.druid.filter.FilterEventAdapter;

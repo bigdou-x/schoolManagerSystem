@@ -1,9 +1,8 @@
-package com.bigdou.xuqing.service;
+package com.bigdou.service;
 
-import antlr.StringUtils;
 import cn.hutool.core.util.StrUtil;
-import com.bigdou.xuqing.dao.UserDao;
-import com.bigdou.xuqing.entity.User;
+import com.bigdou.dao.UserDao;
+import com.bigdou.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

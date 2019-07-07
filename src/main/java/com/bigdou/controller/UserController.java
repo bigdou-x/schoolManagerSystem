@@ -1,7 +1,8 @@
-package com.bigdou.xuqing.controller;
+package com.bigdou.controller;
 
-import com.bigdou.xuqing.entity.User;
-import com.bigdou.xuqing.service.UserService;
+import com.bigdou.entity.User;
+import com.bigdou.mapper.UserMapper;
+import com.bigdou.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,6 +16,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserMapper userMapper;
 
     /**
      * 描述：查询所有用户
@@ -30,4 +34,8 @@ public class UserController {
         userService.addUser(User.builder().userName(userName).password(password).build());
     }
 
+    @RequestMapping("/findById")
+    public User findById(@RequestParam(name = "id") Long id) {
+        return userMapper.findById(id);
+    }
 }

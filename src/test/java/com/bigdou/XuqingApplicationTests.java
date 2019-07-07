@@ -1,4 +1,4 @@
-package com.bigdou.xuqing;
+package com.bigdou;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

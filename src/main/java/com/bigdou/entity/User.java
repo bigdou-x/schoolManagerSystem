@@ -1,4 +1,4 @@
-package com.bigdou.xuqing.entity;
+package com.bigdou.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
