@@ -1,10 +1,12 @@
 <template>
-    <el-container style='height: 100%;'>
-        <el-header>Demo</el-header>
+    <el-container :style="node">
+        <el-header style="height:100px;padding-top: 40px;">
+            <font style="font-family:cursive;font-size: 50px;">练习平台</font>
+        </el-header>
         <el-main>
             <template>
                 <el-row>
-                    <el-col :span='6' :offset='9' style="margin-top:15%;">
+                    <el-col :span='5' :offset='10' style="margin-top:10%;">
                         <el-form label-position="left" label-width="60px" :model='loginData'>
                             <el-form-item label='用户名'>
                                 <el-input v-model='loginData.userName' placeholder='用户名'></el-input>
@@ -21,7 +23,6 @@
                 
             </template>
         </el-main>
-        <el-footer>xxxx</el-footer>
     </el-container>
 </template>
 
@@ -33,6 +34,11 @@
                 loginData: {
                     userName: '',
                     password: ''
+                },
+                node: {
+                    backgroundImage: "url(" + require("../assets/login.jpg") + ")",
+                    backgroundRepeat: "no-repeat",
+                    height:"100%"
                 }
             }
         },
@@ -43,7 +49,16 @@
                     params: this.loginData
                 }).then(response => {
                     console.info(response)
+                    console.info(response.data.ret)
                     console.info("router ",this.$router)
+                    if (response.data.ret == 0) {
+                        this.$message({
+                            message:"登录成功",
+                            type:"success"
+                        })
+                    } else {
+                        this.$message.error("登录失败")
+                    }
                 })
                 .catch(error => (console.info("error ",error)));
             }
@@ -52,9 +67,14 @@
 </script>
 
 <style scoped='scoped'>
-    .el-header, .el-footer {
+    .el-header {
         color: #333;
         text-align: center;
+        height:100px;
+    }
+    .el-form >>> .el-form-item__label {
+        color: white;
+        font-size: 16px;
     }
     /* .el-header, .el-footer {
         background-color: #B3C0D1;

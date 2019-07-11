@@ -15,5 +15,9 @@ public enum ErrorCodeEnum {
     /**
      * 参数错误
      */
-    ERROR_PARAM
+    ERROR_PARAM,
+    /**
+     * 登录失败
+     */
+    ERROR_LOGIN
 }

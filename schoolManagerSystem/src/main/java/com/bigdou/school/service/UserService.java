@@ -111,8 +111,12 @@ public class UserService {
             result.setRet(ErrorCodeEnum.ERROR_PARAM.ordinal());
             return result;
         }
-        result.setContent(userDao.findUsersByUserNameAndPassword(userName, password));
-        result.setRet(ErrorCodeEnum.OK.ordinal());
+        List<User> listUser = userDao.findUsersByUserNameAndPassword(userName, password);
+        if (listUser.size() > 0) {
+            result.setRet(ErrorCodeEnum.OK.ordinal());
+        } else {
+            result.setRet(ErrorCodeEnum.ERROR_LOGIN.ordinal());
+        }
         return result;
     }
 
