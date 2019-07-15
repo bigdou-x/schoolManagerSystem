@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style>
-  html,body,#app{
+  html,body,#app,.el-container{
       height: 100%;
       margin: 0px;
   }
