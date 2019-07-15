@@ -6,10 +6,6 @@ import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './router'
 import axios from 'axios'
-import $ from 'jquery'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js';
-import 'popper.js/dist/popper.min.js'
 
 Vue.config.productionTip = false
 axios.defaults.baseURL="http://127.0.0.1:8080"

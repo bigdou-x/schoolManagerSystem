@@ -1,17 +1,10 @@
 <template>
   <el-container>
     <el-aside style="width:28%;margin: 1%;">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">面板标题</h3>
-        </div>
-        <div class="panel-body">
-            这是一个基本的面板
-        </div>
+      <div class="widget-panel"></div>
     </div>
     </el-aside>
     <el-main style="width:70%">
-      <button class="btn btn-primary">测试按钮</button>
     </el-main>
   </el-container>
 </template>
@@ -30,5 +23,12 @@
   }
 </script>
 
-<style>
+<style scoped="scoped">
+  .widget-panel{
+    height:99%;
+    width: 99%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px, rgba(0, 0, 0, 0.04) 0px 0px 6px;
+    border-radius: 4px;
+    border: 1px solid #BEE5EB;
+  }
 </style>
