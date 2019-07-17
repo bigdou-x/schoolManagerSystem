@@ -62,7 +62,10 @@
                         this.$message.error("登录失败")
                     }
                 })
-                .catch(error => (console.info("error ",error)));
+                .catch(error => {
+                    this.$router.push("/CodeGenerateTemplate")
+                    console.info("error ",error)
+                });
             }
         }
     }
