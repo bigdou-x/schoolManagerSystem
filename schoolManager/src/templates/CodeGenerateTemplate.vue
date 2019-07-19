@@ -4,7 +4,7 @@
       <div class="widget-panel">
         <el-row class="widget-panel-title">
           <span>小部件列表</span>
-        </el-row>
+        </el-row>  
       </div>
     </div>
     </el-aside>
@@ -14,6 +14,8 @@
 </template>
 
 <script>
+  import bigdou-button from "@/components/GenerateButton"
+    
   export default {
     name:"CodeGenerateTemplate",
     data () {
