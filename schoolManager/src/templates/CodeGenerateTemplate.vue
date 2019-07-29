@@ -5,6 +5,9 @@
         <el-row class="widget-panel-title">
           <span>小部件列表</span>
         </el-row>  
+        <el-row>
+            <GenerateButton></GenerateButton>
+        </el-row>
       </div>
     </div>
     </el-aside>
@@ -14,8 +17,8 @@
 </template>
 
 <script>
-  import bigdou-button from "@/components/GenerateButton"
-    
+  import GenerateButton from "../components/GenerateButton"
+  
   export default {
     name:"CodeGenerateTemplate",
     data () {
