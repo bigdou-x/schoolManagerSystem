@@ -17,7 +17,7 @@
 </template>
 
 <script>
-  import GenerateButton from "../components/GenerateButton"
+  // import GenerateButton from "../components/GenerateButton"
   
   export default {
     name:"CodeGenerateTemplate",

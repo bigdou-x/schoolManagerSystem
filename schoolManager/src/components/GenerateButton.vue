@@ -1,11 +1,9 @@
 <template>
-    <el-row>
-        <el-col span="12">
+    <el-row >
+        <el-col :span='24' class="widgetLayoutStyle">
             <el-button>按钮</el-button>
-        </el-col>
-        <el-col span="8">
-            <i class="el-icon-circle-plus-outline"></i>
-            <i class="el-icon-remove-outline"></i>
+            <i class="el-icon-circle-plus-outline" @click="add"></i>
+            <i class="el-icon-remove-outline" @click="remove"></i>
         </el-col>
     </el-row>
 </template>
@@ -18,12 +16,20 @@
                 
             }
         },
-        methods: {
-            
+        methods:{
+            add() {
+                console.info("点击添加");
+            },
+            remove() {
+                console.info("点击删除");
+            }
         }
         // props: ["widgetData"]
     }
 </script>
 
 <style>
+    .widgetLayoutStyle {
+        margin: 5px;
+    }
 </style>
