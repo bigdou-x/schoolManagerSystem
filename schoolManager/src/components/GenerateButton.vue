@@ -13,7 +13,7 @@
         name:"GenerateButton",
         data() {
             return {
-                
+
             }
         },
         methods:{
